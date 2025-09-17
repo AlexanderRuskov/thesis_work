@@ -11,7 +11,7 @@ import java.util.List;
 public interface ListingRepository extends JpaRepository<Listing, Long> {
     List<Listing> findByOwner(User owner);
 
-    // 🔹 Basic filter
+    //  Basic filter
     @Query("SELECT l FROM Listing l " +
             "WHERE (:category IS NULL OR :category = '' OR l.category = :category) " +
             "AND (:city IS NULL OR :city = '' OR LOWER(l.city) LIKE LOWER(CONCAT('%', :city, '%'))) " +
@@ -24,7 +24,7 @@ public interface ListingRepository extends JpaRepository<Listing, Long> {
             @Param("maxPrice") Double maxPrice
     );
 
-    // 🔹 Search
+    //  Search
     @Query("SELECT l FROM Listing l " +
             "WHERE ((:query IS NULL OR :query = '') " +
             "   OR LOWER(l.title) LIKE LOWER(CONCAT('%', :query, '%')) " +

@@ -16,7 +16,7 @@ public class RatingController {
     @Autowired
     private RatingService ratingService;
 
-    // ✅ Add a rating
+    // Add a rating
     @PostMapping("/add")
     public ResponseEntity<Rating> addRating(@RequestBody Map<String, Object> body) {
         Long raterId = Long.valueOf(body.get("raterId").toString());
@@ -28,13 +28,13 @@ public class RatingController {
         return ResponseEntity.ok(rating);
     }
 
-    // ✅ Get all ratings for a user
+    // Get all ratings for a user
     @GetMapping("/{userId}")
     public ResponseEntity<List<Rating>> getRatingsForUser(@PathVariable Long userId) {
         return ResponseEntity.ok(ratingService.getRatingsForUser(userId));
     }
 
-    // ✅ Get average rating for a user
+    // Get average rating for a user
     @GetMapping("/{userId}/average")
     public ResponseEntity<Double> getAverageRating(@PathVariable Long userId) {
         return ResponseEntity.ok(ratingService.getAverageRating(userId));

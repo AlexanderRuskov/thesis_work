@@ -13,14 +13,14 @@ public class Category {
     @Column(nullable = false, unique = true, length = 255)
     private String name;
 
-    // ✅ Constructors
+    //  Constructors
     public Category() {}
 
     public Category(String name) {
         this.name = name;
     }
 
-    // ✅ Getters and Setters
+    //  Getters and Setters
     public Long getId() {
         return id;
     }
@@ -37,7 +37,7 @@ public class Category {
         this.name = name;
     }
 
-    // ✅ Optional: nice toString for debugging
+    //  Optional: nice toString for debugging
     @Override
     public String toString() {
         return "Category{id=" + id + ", name='" + name + "'}";

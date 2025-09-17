@@ -17,7 +17,7 @@ public class FavoriteController {
     @Autowired
     private FavoriteService favoriteService;
 
-    // ✅ Add a favorite
+    // Add a favorite
     @PostMapping("/add")
     public ResponseEntity<Favorite> addFavorite(@RequestBody Map<String, Long> body) {
         Long userId = body.get("userId");
@@ -25,7 +25,7 @@ public class FavoriteController {
         return ResponseEntity.ok(favoriteService.addFavorite(userId, listingId));
     }
 
-    // ✅ Remove a favorite
+    //  Remove a favorite
     @DeleteMapping("/remove")
     public ResponseEntity<?> removeFavorite(@RequestBody Map<String, Long> body) {
         Long userId = body.get("userId");
@@ -34,7 +34,7 @@ public class FavoriteController {
         return ResponseEntity.ok(Map.of("message", "Removed from favorites"));
     }
 
-    // ✅ Get all favorites for a user (returns full listings now)
+    //  Get all favorites for a user (returns full listings now)
     @GetMapping("/{userId}")
     public ResponseEntity<List<Listing>> getFavorites(@PathVariable Long userId) {
         return ResponseEntity.ok(favoriteService.getFavorites(userId));

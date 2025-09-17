@@ -35,9 +35,9 @@ public class ImageController {
     ) {
         try {
             imageService.saveImagesForListing(listingId, files);
-            return ResponseEntity.ok("✅ Images uploaded for listing " + listingId);
+            return ResponseEntity.ok(" Images uploaded for listing " + listingId);
         } catch (Exception e) {
-            return ResponseEntity.status(500).body("❌ Error uploading images: " + e.getMessage());
+            return ResponseEntity.status(500).body(" Error uploading images: " + e.getMessage());
         }
     }
 

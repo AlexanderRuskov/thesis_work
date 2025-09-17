@@ -14,7 +14,7 @@ public class FavoriteId implements Serializable {
         this.listingId = listingId;
     }
 
-    // ✅ equals & hashCode
+    //  equals & hashCode
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;

@@ -21,13 +21,13 @@ public class UserController {
     @Autowired
     private RatingService ratingService;
 
-    // ✅ Register new user
+    //  Register new user
     @PostMapping("/register")
     public ResponseEntity<User> register(@RequestBody User user) {
         return ResponseEntity.ok(userService.register(user));
     }
 
-    // ✅ Login
+    //  Login
     @PostMapping("/login")
     public ResponseEntity<User> login(@RequestBody Map<String, String> body) {
         String username = body.get("username");
@@ -37,7 +37,7 @@ public class UserController {
                 .orElse(ResponseEntity.status(HttpStatus.UNAUTHORIZED).build());
     }
 
-    // ✅ Fetch public profile info (with average rating)
+    //  Fetch public profile info (with average rating)
     @GetMapping("/{username}")
     public ResponseEntity<?> getUserProfile(@PathVariable String username) {
         Optional<User> user = userService.findByUsername(username);
@@ -60,7 +60,7 @@ public class UserController {
         ));
     }
 
-    // ✅ Update phone number
+    //  Update phone number
     @PutMapping("/{id}/phone")
     public ResponseEntity<?> updatePhoneNumber(
             @PathVariable Long id,

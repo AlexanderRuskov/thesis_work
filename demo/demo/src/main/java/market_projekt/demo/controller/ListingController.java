@@ -92,7 +92,7 @@ public class ListingController {
             Optional<User> user = userRepository.findByUsername(username);
 
             if (user.isEmpty()) {
-                return ResponseEntity.badRequest().body("❌ Invalid user.");
+                return ResponseEntity.badRequest().body(" Invalid user.");
             }
 
             Listing listing = new Listing();
@@ -101,12 +101,12 @@ public class ListingController {
             listing.setPrice(request.price);
             listing.setCategory(request.category);
             listing.setCity(request.city);
-            listing.setOwner(user.get()); // ✅ Set the owner here
+            listing.setOwner(user.get());
 
-            Listing saved = listingRepository.save(listing); // Use repository directly or through service
+            Listing saved = listingRepository.save(listing);
             return ResponseEntity.ok(saved);
         } catch (Exception e) {
-            return ResponseEntity.badRequest().body("❌ Error: " + e.getMessage());
+            return ResponseEntity.badRequest().body(" Error: " + e.getMessage());
         }
     }
 
@@ -116,33 +116,33 @@ public class ListingController {
             @RequestParam String description,
             @RequestParam Double price,
             @RequestParam String category,
-            @RequestParam String city, // 🆕 Add this
-            @RequestParam String owner, // ✅ Accept owner username from frontend
+            @RequestParam String city,
+            @RequestParam String owner,
             @RequestParam("images") List<MultipartFile> images
     ) {
         try {
             Optional<User> userOptional = userRepository.findByUsername(owner);
 
             if (userOptional.isEmpty()) {
-                return ResponseEntity.badRequest().body("❌ Invalid user.");
+                return ResponseEntity.badRequest().body(" Invalid user.");
             }
 
             User ownerUser = userOptional.get();
 
-            // ✅ Create the listing via service
+            //Create the listing via service
             Listing listing = listingService.createListingWithImages(
                     title,
                     description,
                     price,
                     category,
                     city,
-                    ownerUser, // Now pass the actual User entity
+                    ownerUser,
                     images
             );
 
             return ResponseEntity.ok(listing);
         } catch (Exception e) {
-            return ResponseEntity.badRequest().body("❌ Error: " + e.getMessage());
+            return ResponseEntity.badRequest().body(" Error: " + e.getMessage());
         }
     }
 
@@ -168,7 +168,7 @@ public class ListingController {
             Listing updated = listingService.updateListing(id, request);
             return ResponseEntity.ok(updated);
         } catch (Exception e) {
-            return ResponseEntity.badRequest().body("❌ Error: " + e.getMessage());
+            return ResponseEntity.badRequest().body(" Error: " + e.getMessage());
         }
     }
 
@@ -191,11 +191,11 @@ public class ListingController {
 
         boolean removed = listing.getImages().removeIf(img -> img.getId().equals(imageId));
         if (!removed) {
-            return ResponseEntity.badRequest().body("❌ Image not found in this listing.");
+            return ResponseEntity.badRequest().body(" Image not found in this listing.");
         }
 
         listingRepository.save(listing);
-        return ResponseEntity.ok("✅ Image deleted successfully!");
+        return ResponseEntity.ok(" Image deleted successfully!");
     }
 
 }
