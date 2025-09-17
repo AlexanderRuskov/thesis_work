@@ -10,7 +10,7 @@ document.addEventListener("DOMContentLoaded", async () => {
     const imageInput = document.getElementById("imageFile");
     const imagePreview = document.getElementById("imagePreview");
 
-    // ✅ Load categories from DB
+    //  Load categories from DB
     async function loadCategories(selectedCategory) {
         try {
             const res = await fetch("http://localhost:8080/api/categories");
@@ -33,7 +33,7 @@ document.addEventListener("DOMContentLoaded", async () => {
         }
     }
 
-    // ✅ Load current listing
+    //  Load current listing
     const res = await fetch(`http://localhost:8080/api/listings/${listingId}`);
     const listing = await res.json();
 
@@ -55,7 +55,7 @@ document.addEventListener("DOMContentLoaded", async () => {
         return spinner;
     }
 
-    // ✅ Show current images with delete button
+    //  Show current images with delete button
     if (listing.images && listing.images.length > 0) {
         listing.images.forEach(img => {
             const container = document.createElement("div");
@@ -111,7 +111,7 @@ document.addEventListener("DOMContentLoaded", async () => {
         });
     }
 
-    // ✅ Update listing
+    //  Update listing
     document.getElementById("editForm").addEventListener("submit", async (e) => {
         e.preventDefault();
 

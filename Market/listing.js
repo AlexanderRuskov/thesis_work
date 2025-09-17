@@ -12,13 +12,13 @@ document.addEventListener("DOMContentLoaded", async () => {
         if (!res.ok) throw new Error("Listing not found");
         const listing = await res.json();
 
-        // ✅ Set basic info
+        //  Set basic info
         document.getElementById("title").textContent = listing.title;
         document.getElementById("description").textContent = listing.description;
         document.getElementById("price").textContent = `$${listing.price}`;
         document.getElementById("views").textContent = `${listing.views} views`;
 
-        // ✅ Inject seller info dynamically
+        //  Inject seller info dynamically
         const sellerInfo = document.querySelector(".seller-info");
         if (sellerInfo) {
             sellerInfo.innerHTML = `
@@ -28,7 +28,7 @@ document.addEventListener("DOMContentLoaded", async () => {
             `;
         }
 
-        // ✅ Handle images
+        //  Handle images
         const imageElement = document.getElementById("carousel-image");
         const prevBtn = document.querySelector(".carousel-btn.prev");
         const nextBtn = document.querySelector(".carousel-btn.next");

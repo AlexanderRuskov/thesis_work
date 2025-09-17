@@ -9,7 +9,7 @@ document.addEventListener("DOMContentLoaded", async () => {
     const clearFiltersBtn = document.getElementById("clearFiltersBtn");
     const searchBtn = document.getElementById("searchBtn");
 
-    // 🔹 Load categories dynamically
+    //  Load categories dynamically
     async function loadCategories() {
         try {
             const res = await fetch("http://localhost:8080/api/categories");
@@ -26,7 +26,7 @@ document.addEventListener("DOMContentLoaded", async () => {
         }
     }
 
-    // 🔹 Render products
+    //  Render products
     function renderProducts(productArray) {
         productList.innerHTML = "";
 
@@ -58,7 +58,7 @@ document.addEventListener("DOMContentLoaded", async () => {
                 <button class="favorite-btn" data-id="${product.id}">♡</button>
             `;
 
-            // 🔹 Clicking on title or image → go to details
+            //  Clicking on title or image → go to details
             div.querySelector("img").addEventListener("click", () => {
                 window.location.href = `listing.html?id=${product.id}`;
             });
@@ -66,7 +66,7 @@ document.addEventListener("DOMContentLoaded", async () => {
                 window.location.href = `listing.html?id=${product.id}`;
             });
 
-            // 🔹 Handle favorites
+            //  Handle favorites
             const favBtn = div.querySelector(".favorite-btn");
             favBtn.addEventListener("click", async (e) => {
                 e.stopPropagation(); // prevent parent click
@@ -104,7 +104,7 @@ document.addEventListener("DOMContentLoaded", async () => {
         });
     }
 
-    // 🔹 Fetch listings with search + filters
+    //  Fetch listings with search + filters
     async function fetchListings() {
         const query = searchInput.value.trim();
         const category = categoryFilter.value;
@@ -129,7 +129,7 @@ document.addEventListener("DOMContentLoaded", async () => {
         }
     }
 
-    // 🔹 Event bindings
+    //  Event bindings
     searchBtn.addEventListener("click", fetchListings);
     applyFiltersBtn.addEventListener("click", fetchListings);
     categoryFilter.addEventListener("change", fetchListings);
@@ -143,7 +143,7 @@ document.addEventListener("DOMContentLoaded", async () => {
         fetchListings();
     });
 
-    // 🔹 Initial load
+    //  Initial load
     await loadCategories();
     fetchListings();
 });

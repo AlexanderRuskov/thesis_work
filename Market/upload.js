@@ -4,7 +4,7 @@ document.addEventListener("DOMContentLoaded", async () => {
   const imageInput = document.getElementById("imageFile");
   const imagePreview = document.getElementById("imagePreview");
 
-  // ✅ Load categories from DB
+  //  Load categories from DB
   async function loadCategories() {
     try {
       const res = await fetch("http://localhost:8080/api/categories");
@@ -22,7 +22,7 @@ document.addEventListener("DOMContentLoaded", async () => {
   }
   await loadCategories();
 
-  // ✅ Form submission
+  //  Form submission
   listingForm.addEventListener("submit", async (e) => {
     e.preventDefault();
 
@@ -45,7 +45,7 @@ document.addEventListener("DOMContentLoaded", async () => {
       return;
     }
 
-    // ✅ Image validation
+    //  Image validation
     const maxFiles = 5;
     const maxSize = 5 * 1024 * 1024; // 5MB
     const allowedTypes = ["image/jpeg", "image/png", "image/webp"];
@@ -99,7 +99,7 @@ document.addEventListener("DOMContentLoaded", async () => {
     }
   });
 
-  // ✅ Multi-image preview
+  //  Multi-image preview
   imageInput.addEventListener("change", () => {
     imagePreview.innerHTML = "";
     Array.from(imageInput.files).forEach(file => {

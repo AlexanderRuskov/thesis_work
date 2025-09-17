@@ -27,7 +27,7 @@ document.addEventListener("DOMContentLoaded", async () => {
     document.getElementById("phoneDisplay").textContent =
       userData.phoneNumber || "❌ Not provided";
 
-    // ✅ Fetch and show average rating
+    //  Fetch and show average rating
     try {
       const avgRes = await fetch(
         `http://localhost:8080/api/ratings/${userData.id}/average`
@@ -46,7 +46,7 @@ document.addEventListener("DOMContentLoaded", async () => {
       console.error("Error fetching average rating:", err);
     }
 
-    // ✅ Show rating stars if viewing another user
+    // Show rating stars if viewing another user
     if (currentUser && currentUser.username !== viewingUser) {
       const stars = document.querySelectorAll("#ratingStars span");
       stars.forEach((star) => {
@@ -85,7 +85,7 @@ document.addEventListener("DOMContentLoaded", async () => {
       "❌ User not found";
   }
 
-  // ✅ Fetch listings by user
+  //  Fetch listings by user
   try {
     const res = await fetch(
       `http://localhost:8080/api/listings/user/${viewingUser}`
