@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Marketplace - Home</title>
+    <link rel="stylesheet" href="css.css">
+</head>
+<body>
+    <div class="page">
+
+    <header>
+    <div class="navbar">
+        <h1 class="logo">MarketPlace</h1>
+        <nav id="navLinks"></nav>
+    </div>
+    </header>
+
+
+<!-- Main Product Listing -->
+<main class="main-layout">
+    
+    <!-- Sidebar for Category Filter -->
+    <aside class="sidebar">
+        <h3>Filter by Category</h3>
+        <select id="categoryFilter">
+            <option value="">All Categories</option>
+        </select>
+
+            <!-- 🔽 Price Filter -->
+        <h3 style="margin-top: 20px;">Price Range</h3>
+        <input type="number" id="minPrice" placeholder="Min price">
+        <input type="number" id="maxPrice" placeholder="Max price">
+
+        <!-- 🏙️ City Filter -->
+        <h3 style="margin-top: 20px;">City</h3>
+        <input type="text" id="cityInput" placeholder="e.g. Sofia">
+
+        <!-- 🔘 Apply Filters Button -->
+        <button id="applyFiltersBtn">Apply Filters</button>
+        <button id="clearFiltersBtn">Clear Filters</button>
+    </aside>
+
+   
+
+
+    <!-- Main product content -->
+    <section class="product-area">
+
+        <!-- Search bar -->
+        <div class="search-bar">
+            <input type="text" id="searchInput" placeholder="Search for products...">
+            <button id="searchBtn">Search</button>
+        </div>
+
+        <!-- Products -->
+        <div id="product-list"></div>
+
+        <!-- Pagination -->
+        <div class="pagination">
+            <button id="prevPage">Prev</button>
+            <span id="pageNumber">1</span>
+            <button id="nextPage">Next</button>
+        </div>
+
+    </section>
+</main>
+
+
+<footer>
+    <div class="footer-container">
+        <div class="footer-section">
+            <h4>About</h4>
+            <p>Online Marketplace to buy and sell goods easily.</p>
+        </div>
+        <div class="footer-section">
+            <h4>Quick Links</h4>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="create-listing.html">Sell Product</a></li>
+                <li><a href="login.html">Login</a></li>
+            </ul>
+        </div>
+        <div class="footer-section">
+            <h4>Contact</h4>
+            <p>Email: support@marketplace.com</p>
+            <p>Phone: +123 456 7890</p>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        &copy; 2025 Marketplace. All rights reserved.
+    </div>
+</footer>
+</div>
+    
+    <script src="navbar.js"></script>
+    <script src="js.js"></script>
+</body>
+</html>
+
+
+

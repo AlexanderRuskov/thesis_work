@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Listing Details</title>
+    <link rel="stylesheet" href="css.css">
+</head>
+<body>
+    <header>
+        <div class="navbar">
+            <h1 class="logo">MarketPlace</h1>
+            <nav>
+                <a href="index.html">Home</a>
+                <a href="create-listing.html">Sell</a>
+                <a href="favorites.html">Favorites</a>
+                <a href="login.html">Login</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="listing-details">
+    <!-- Left: Image Carousel -->
+    <div class="carousel">
+        <button class="carousel-btn prev">❮</button>
+        <img id="carousel-image" src="" alt="Listing Image">
+        <button class="carousel-btn next">❯</button>
+    </div>
+
+    <!-- Right: Info -->
+    <div class="details-info">
+        <h2 id="title">Loading...</h2>
+        <p id="description"></p>
+        <strong id="price"></strong>
+
+        <div class="seller-info">
+            <p><strong>Sold by:</strong> <span id="sellerName"></span></p>
+            <p>Email: <span id="sellerEmail"></span></p>
+        </div>
+
+        <p id="views"></p>
+    </div>
+</main>
+
+
+<footer>
+    <div class="footer-container">
+        <div class="footer-section">
+            <h4>About</h4>
+            <p>Online Marketplace to buy and sell goods easily.</p>
+        </div>
+        <div class="footer-section">
+            <h4>Quick Links</h4>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="create-listing.html">Sell Product</a></li>
+                <li><a href="login.html">Login</a></li>
+            </ul>
+        </div>
+        <div class="footer-section">
+            <h4>Contact</h4>
+            <p>Email: support@marketplace.com</p>
+            <p>Phone: +123 456 7890</p>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        &copy; 2025 Marketplace. All rights reserved.
+    </div>
+</footer>
+
+    <script src="listing.js"></script>
+</body>
+</html>

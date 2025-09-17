@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>My Account - Marketplace</title>
+  <link rel="stylesheet" href="css.css">
+</head>
+<body>
+<div class="page">
+
+  <!-- Header -->
+  <header>
+    <div class="navbar">
+      <h1 class="logo">MarketPlace</h1>
+      <nav>
+        <a href="index.html">Home</a>
+        <a href="account.html" class="active">My Account</a>
+        <a href="favorites.html">Favorites</a>
+        <a href="create-listing.html">Sell</a>
+        <a href="login.html">Logout</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Main -->
+  <main class="account-section">
+
+    <!-- Profile Card -->
+    <section class="profile-card">
+      <div class="profile-header">
+        <div class="user-details">
+          <h2 id="usernameDisplay">Alexander Ruskov</h2>
+          <p>Email: <span id="emailDisplay">coccho8@abv.bg</span></p>
+          <p>Phone: <span id="phoneDisplay">Not provided</span></p>
+        </div>
+      </div>
+
+      <!-- Phone update -->
+      <div class="update-phone">
+        <label for="phoneInput">Update Phone:</label>
+        <input type="text" id="phoneInput" placeholder="Enter phone number">
+        <button id="savePhoneBtn">Save</button>
+      </div>
+
+        <!-- ⭐ Rating Section -->
+        <div class="rating-section">
+        <h3>User Rating</h3>
+
+        <!-- Average rating display -->
+        <p>
+        Average Rating: <span id="averageRating">0</span> / 5
+        </p>
+
+        <!-- Stars for submitting a rating -->
+        <div class="stars" id="ratingStars">
+            <span data-value="1">★</span>
+            <span data-value="2">★</span>
+            <span data-value="3">★</span>
+            <span data-value="4">★</span>
+            <span data-value="5">★</span>
+        </div>
+        </div>
+
+
+      <!-- Add new listing button -->
+      <div class="add-listing">
+        <a href="create-listing.html">
+          <button class="create-btn">+ Add New Listing</button>
+        </a>
+      </div>
+    </section>
+
+    <!-- Listings -->
+    <section class="listings-section">
+      <h3>My Listings</h3>
+      <div id="user-listings" class="product-grid"></div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-container">
+      <div class="footer-section">
+        <h4>About</h4>
+        <p>Online Marketplace to buy and sell goods easily.</p>
+      </div>
+      <div class="footer-section">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="create-listing.html">Sell Product</a></li>
+          <li><a href="login.html">Login</a></li>
+        </ul>
+      </div>
+      <div class="footer-section">
+        <h4>Contact</h4>
+        <p>Email: support@marketplace.com</p>
+        <p>Phone: +123 456 7890</p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      &copy; 2025 Marketplace. All rights reserved.
+    </div>
+  </footer>
+
+</div>
+<script src="account.js"></script>
+</body>
+</html>

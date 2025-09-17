@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>User Profile - Marketplace</title>
+    <link rel="stylesheet" href="css.css">
+</head>
+<body>
+<div class="page">
+    <header>
+        <div class="navbar">
+            <h1 class="logo">MarketPlace</h1>
+            <nav>
+                <a href="index.html">Home</a>
+                <a href="profile.html">My Profile</a>
+                <a href="favorites.html">Favorites</a>
+                <a href="create-listing.html">Sell</a>
+                <a href="login.html">Logout</a>
+            </nav>
+        </div>
+    </header>
+
+<main class="product-section">
+    
+    <div class="profile-header">
+    <h2 id="usernameDisplay">Username</h2>
+    <p>Email: <span id="emailDisplay">Hidden</span></p>
+    <p>Phone: <span id="phoneDisplay">Hidden</span></p>
+    </div>
+    
+    <div id="phone-update" style="margin-top: 15px; display: none;">
+    <label for="phoneInput">Phone Number:</label>
+    <input type="text" id="phoneInput" placeholder="Enter your phone number">
+    <button id="savePhoneBtn">Save</button>
+    </div>
+
+        <!-- ⭐ Rating Section -->
+    <div class="rating-section">
+    <h3>User Rating</h3>
+
+    <!-- Average rating display -->
+    <p>
+        <span id="averageRating">0</span> 
+    </p>
+
+    <!-- Stars for submitting a rating -->
+    <div class="stars" id="ratingStars">
+        <span data-value="1">★</span>
+        <span data-value="2">★</span>
+        <span data-value="3">★</span>
+        <span data-value="4">★</span>
+        <span data-value="5">★</span>
+    </div>
+    </div>
+
+
+
+    <div id="add-listing-button" style="margin-top: 20px; display: none;">
+        <a href="create-listing.html">
+            <button class="create-btn">Add New Listing</button>
+        </a>
+    </div>
+
+    <h2 style="margin-top: 30px;">Listings</h2>
+    <div id="user-listings"></div>
+</main>
+
+<footer>
+    <div class="footer-container">
+        <div class="footer-section">
+            <h4>About</h4>
+            <p>Online Marketplace to buy and sell goods easily.</p>
+        </div>
+        <div class="footer-section">
+            <h4>Quick Links</h4>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="create-listing.html">Sell Product</a></li>
+                <li><a href="login.html">Login</a></li>
+            </ul>
+        </div>
+        <div class="footer-section">
+            <h4>Contact</h4>
+            <p>Email: support@marketplace.com</p>
+            <p>Phone: +123 456 7890</p>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        &copy; 2025 Marketplace. All rights reserved.
+    </div>
+</footer>
+</div>
+
+<script src="profile.js"></script>
+</body>
+</html>

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Create Listing</title>
+    <link rel="stylesheet" href="css.css">
+</head>
+<body>
+    <header>
+        <div class="navbar">
+            <h1 class="logo">MarketPlace</h1>
+            <nav>
+                <a href="index.html">Home</a>
+                <a href="login.html">Login</a>
+                <a href="register.html">Register</a>
+                <a href="favorites.html">Favorites</a>
+                <a href="create-listing.html">Sell</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <div class="form-container">
+            <h2>Create a Listing</h2>
+                <form id="listingForm" enctype="multipart/form-data">
+                    <label for="title">Product Title</label>
+                    <input type="text" id="title" required>
+
+                    <label for="imageFile">Upload Image</label>
+                    <input type="file" id="imageFile" accept="image/png, image/jpeg, image/webp" multiple required>
+                    <img id="imagePreview" src="#" alt="Image Preview" style="display:none; width: 150px; margin-top: 10px;"/>
+
+                    <label for="category">Category</label>
+                    <select id="category" required>
+                        <option value="">Select a category</option>
+                    </select>
+
+                    <label for="price">Price ($)</label>
+                    <input type="number" id="price" required>
+
+                    <label for="city">City:</label>
+                    <input type="text" id="city" name="city" placeholder="e.g. Sofia" required>
+
+                    <label for="description">Description</label>
+                    <textarea id="description" rows="4" required></textarea>
+
+                    <button type="submit">Publish Listing</button>
+                </form>
+     
+        </div>
+    </main>
+
+   <br>
+   <br>
+   <br>
+   <br>
+    <footer>
+    <div class="footer-container">
+        <div class="footer-section">
+            <h4>About</h4>
+            <p>Online Marketplace to buy and sell goods easily.</p>
+        </div>
+        <div class="footer-section">
+            <h4>Quick Links</h4>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="create-listing.html">Sell Product</a></li>
+                <li><a href="login.html">Login</a></li>
+            </ul>
+        </div>
+        <div class="footer-section">
+            <h4>Contact</h4>
+            <p>Email: support@marketplace.com</p>
+            <p>Phone: +123 456 7890</p>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        &copy; 2025 Marketplace. All rights reserved.
+    </div>
+    </footer>
+
+    <script src="upload.js"></script>
+
+</body>
+</html>

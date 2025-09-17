@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Edit Listing</title>
+    <link rel="stylesheet" href="css.css">
+</head>
+<body>
+<div class="page">
+    <header>
+        <div class="navbar">
+            <h1 class="logo">MarketPlace</h1>
+            <nav>
+                <a href="index.html">Home</a>
+                <a href="profile.html">My Profile</a>
+                <a href="create-listing.html">Sell</a>
+                <a href="favorites.html">Favorites</a>
+                <a href="login.html">Logout</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="product-section">
+        <h2>Edit Your Listing</h2>
+        <form id="editForm" enctype="multipart/form-data">
+            <label for="title">Title</label>
+            <input type="text" id="title" required>
+
+            <label for="description">Description</label>
+            <textarea id="description" required></textarea>
+
+            <label for="price">Price</label>
+            <input type="number" id="price" step="0.01" required>
+
+            <label for="category">Category</label>
+            <select id="category" required>
+            </select>
+
+            <label for="city">City:</label>
+            <input type="text" id="city" name="city" required>
+
+            <label for="imageFile">Add New Images (optional)</label>
+            <input type="file" id="imageFile" multiple>
+
+            <div id="imagePreview"></div>
+
+            <button type="submit">Update Listing</button>
+        </form>
+    </main>
+
+    <footer>
+    <div class="footer-container">
+        <div class="footer-section">
+            <h4>About</h4>
+            <p>Online Marketplace to buy and sell goods easily.</p>
+        </div>
+        <div class="footer-section">
+            <h4>Quick Links</h4>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="create-listing.html">Sell Product</a></li>
+                <li><a href="login.html">Login</a></li>
+            </ul>
+        </div>
+        <div class="footer-section">
+            <h4>Contact</h4>
+            <p>Email: support@marketplace.com</p>
+            <p>Phone: +123 456 7890</p>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        &copy; 2025 Marketplace. All rights reserved.
+    </div>
+</footer>
+</div>
+
+<script src="edit.js"></script>
+</body>
+</html>
